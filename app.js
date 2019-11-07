@@ -3,10 +3,7 @@ new Vue({
     el: "#vue-app", // element 对应index.html的id="vue-app" 可操作的id容器
     data() {
         return {
-            name: '雲',
-            wechat: '24335',
-            website: 'https://www.baidu.com',
-            websiteTag: '<a href="https://www.taobao.com">taobao</a>'
+            age: 30
         };
     },
     methods: {

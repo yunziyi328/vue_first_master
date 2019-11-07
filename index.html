@@ -10,15 +10,10 @@
 
 <body>
     <div id="vue-app">
-        <h1>Hello,{{name}}</h1>
-
-        <p>你的微信是:{{wechat}}</p>
-        <p>{{greet('moring')}} 　　{{havaLunch()}}</p>
-        <p>
-            <a v-bind:href="website">属性绑定百度</a1>
-        </p>
-        <p v-html="websiteTag"></p>
-        <p><input type="text" :value="name" /></p>
+        <h1>Event</h1>
+        <button v-on:click="age++">add a year</button>
+        <button v-on:click="age--">subtract a year</button>
+        <p>我的年龄是: {{age}} </p>
     </div>
 </body>
 <script src="app.js"></script>
