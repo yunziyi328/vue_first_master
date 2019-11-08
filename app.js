@@ -3,19 +3,22 @@ new Vue({
     el: "#vue-app", // element 对应index.html的id="vue-app" 可操作的id容器
     data() {
         return {
-            age: 30
+            age: 30,
+            x: 0,
+            y: 0
         };
     },
     methods: {
-        // greet: function () {
-        //     return 'Good night' + this.name;
-        // }
-        greet(time) {
-            // return "另一种方法: " + this.name;
-            return `Good ${time} ${this.name}`
+        add(ad) {
+            this.age += ad;
         },
-        havaLunch() {
-            return `夕食を食べたの？`;
+        subtract(cd) {
+            this.age -= cd;
+        },
+        moveXY(event) {
+            // console.log(event);
+            this.x = event.offsetX;
+            this.y = event.offsetY;
         }
     }
 });
