@@ -9,12 +9,22 @@
 
 <body>
     <div id="vue-app">
-        <h1>watch监听属性</h1>
-        <h3>watch会持续监听属性的状态，耗费性能</h3>
-        <label>名前：　</label>
-        <input type="text" ref="refName" @keyup.enter="onNameEnter" /><span>{{name}}</span><br />
-        <label>年齢：　</label>
-        <input type="text" ref="refAge" @keyup="onAgeEnter" /><span>{{age}}</span>
+        <h1>computed 计算属性</h1>
+        <h4>只有在当前的属性发生变化后，才会被触发computed，可大大的优化性能</h4>
+        <h4>如果属性常常发生变化，推荐computed，例如样式，搜索</h4>
+
+        <!-- computed -->
+        <!-- computed属于属性，所以AddToA不用（） -->
+        <button @click="a++">Add to A</button>
+        <button @click="b++">Add to B</button>
+        <p>A- {{a}} </p>
+        <p>B- {{b}} </p>
+        <p>Age + A = {{ AddToA }} </p>
+        <p>Age + B = {{ AddToB }} </p>
+        <!-- methods 只要methods中的方法有一个发生变化,其他方法的值虽然不变化但是都跟着运行了一遍-->
+        <!-- 耗费性能 -->
+        <!-- <p>Age + A = {{ AddToA() }} </p>
+        <p>Age + B = {{ AddToB() }} </p> -->
     </div>
 </body>
 <script src="app.js"></script>
