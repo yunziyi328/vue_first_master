@@ -2,26 +2,26 @@
 
 <head>
     <meta charset="utf-8">
-    <title>v-on事件修饰符</title>
+    <title>key键盘事件</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="vue-app">
-        <h1>Event</h1>
-        <!-- 鼠标单击事件 -->
-        <!-- <button v-on:click="age++">add a year</button>
-        <button v-on:click="age--">subtract a year</button> -->
-        <p @click.prevent="clickB"><a href="https://www.baidu.com">BaiDu</a></p>
-        <button @click.once="add(1)">add a year</button>
-        <button v-on:click="subtract(1)">subtract a year</button>
-        <!-- 鼠标双击事件 -->
-        <button @dblclick="add(10)">add a year</button>
-        <button v-on:dblclick="subtract(10)">subtract a year</button>
-        <p>我的年龄是: {{age}} </p>
-        <!-- 鼠标移动事件 -->
-        <div id="canvas" v-on:mousemove="moveXY">{{x}},{{y}}</div>
+        <h1>键盘事件</h1>
+        <h3>v-on:keyup,keydown键盘事件</h3>
+        <!-- keyup,keydown键盘事件 -->
+        <label>名前：　</label>
+        <input type="text" v-on:keydown="keyName" />
+        <label>年齢：　</label>
+        <input type="text" v-on:keyup="keyAge" /><br />
+        <h3>v-on:keydown.enter键盘事件</h3>
+        <label>名前：　</label>
+        <input type="text" v-on:keydown.enter="keyNameEnter" /></br>
+        <h3>v-on:keydown.alt.enter键盘事件</h3>
+        <label>年齢：　</label>
+        <input type="text" v-on:keyup.alt.enter="keyAgeEnter" />
     </div>
 </body>
 <script src="app.js"></script>

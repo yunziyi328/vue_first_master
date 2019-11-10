@@ -2,27 +2,20 @@
 new Vue({
     el: "#vue-app", // element 对应index.html的id="vue-app" 可操作的id容器
     data() {
-        return {
-            age: 30,
-            x: 0,
-            y: 0,
-            // clickB: '<a href="https://www.baidu.com">BaiDu</a>'
-        };
+        return {};
     },
     methods: {
-        add(ad) {
-            this.age += ad;
+        keyName() {
+            console.log("名字正在输入。。。");
         },
-        subtract(cd) {
-            this.age -= cd;
+        keyAge() {
+            console.log("年龄正在输入。。。");
         },
-        moveXY(event) {
-            // console.log(event);
-            this.x = event.offsetX;
-            this.y = event.offsetY;
+        keyNameEnter() {
+            console.log("名字正在输入。。。");
         },
-        clickB() {
-            alert("aaa")
+        keyAgeEnter() {
+            console.log("年龄正在输入。。。");
         }
     }
 });
