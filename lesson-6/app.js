@@ -5,8 +5,7 @@ new Vue({
         return {
             age: 30,
             x: 0,
-            y: 0,
-            // clickB: '<a href="https://www.baidu.com">BaiDu</a>'
+            y: 0
         };
     },
     methods: {
@@ -20,9 +19,6 @@ new Vue({
             // console.log(event);
             this.x = event.offsetX;
             this.y = event.offsetY;
-        },
-        clickB() {
-            alert("aaa")
         }
     }
 });

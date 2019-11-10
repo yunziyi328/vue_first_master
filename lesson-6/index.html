@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>v-on事件修饰符</title>
+    <title>First Vue</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="style.css" rel="stylesheet" />
 </head>
@@ -13,8 +13,7 @@
         <!-- 鼠标单击事件 -->
         <!-- <button v-on:click="age++">add a year</button>
         <button v-on:click="age--">subtract a year</button> -->
-        <p @click.prevent="clickB"><a href="https://www.baidu.com">BaiDu</a></p>
-        <button @click.once="add(1)">add a year</button>
+        <button @click="add(1)">add a year</button>
         <button v-on:click="subtract(1)">subtract a year</button>
         <!-- 鼠标双击事件 -->
         <button @dblclick="add(10)">add a year</button>
