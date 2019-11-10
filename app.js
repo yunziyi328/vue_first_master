@@ -2,7 +2,10 @@
 new Vue({
     el: "#vue-app", // element 对应index.html的id="vue-app" 可操作的id容器
     data() {
-        return {};
+        return {
+            name: '',
+            age: ''
+        };
     },
     methods: {
         keyName() {
