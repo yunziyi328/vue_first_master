@@ -9,8 +9,8 @@
 
 <body>
     <div id="vue-app">
-        <h1>ref双向绑定事件</h1>
-        <h3>refs可以获取到所有的ref元素</h3>
+        <h1>watch监听属性</h1>
+        <h3>watch会持续监听属性的状态，耗费性能</h3>
         <label>名前：　</label>
         <input type="text" ref="refName" @keyup.enter="onNameEnter" /><span>{{name}}</span><br />
         <label>年齢：　</label>

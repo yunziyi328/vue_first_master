@@ -4,7 +4,7 @@ new Vue({
     data() {
         return {
             name: '',
-            age: ''
+            age: 32
         };
     },
     methods: {
@@ -13,6 +13,11 @@ new Vue({
         },
         onAgeEnter() {
             this.age = this.$refs.refAge.value;
+        }
+    },
+    watch: {
+        age(val, oldVal) {
+            console.log(val, oldVal);
         }
     }
 });
