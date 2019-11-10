@@ -2,29 +2,19 @@
 
 <head>
     <meta charset="utf-8">
-    <title>key键盘事件</title>
+    <title>ref双向绑定事件</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="vue-app">
-        <h1>双向数据绑定(既有输入也有输出) input / select / textarea</h1>
-        <h3>v-on:keyup,keydown键盘事件</h3>
-        <label>名前：　</label> <!-- 用来输入内容的 -->
-        <!-- v-model.lazy => (延迟同步值)只有在鼠标离开时，输入的内容才会显示出来 -->
-        <!-- v-model.trim => 过滤首尾空白字符 -->
-        <!-- v-model.trim => 输入值转为数值类型 type="number" 如果为type="text" 输出的依然是字符串类型-->
-        <input type="text" v-model="name" />
-        <label>年齢：　</label>
-        <input type="number" v-model.number="age" /><br />
-        <p>{{name}} <span>{{age}}</span></p><!-- 用来输出内容的 -->
-        <h3>v-on:keydown.enter键盘事件</h3>
+        <h1>ref双向绑定事件</h1>
+        <h3>refs可以获取到所有的ref元素</h3>
         <label>名前：　</label>
-        <input type="text" v-on:keydown.enter="keyNameEnter" /></br>
-        <h3>v-on:keydown.alt.enter键盘事件</h3>
+        <input type="text" ref="refName" @keyup.enter="onNameEnter" /><span>{{name}}</span><br />
         <label>年齢：　</label>
-        <input type="text" v-on:keyup.alt.enter="keyAgeEnter" />
+        <input type="text" ref="refAge" @keyup="onAgeEnter" /><span>{{age}}</span>
     </div>
 </body>
 <script src="app.js"></script>

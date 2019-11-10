@@ -8,17 +8,11 @@ new Vue({
         };
     },
     methods: {
-        keyName() {
-            console.log("名字正在输入。。。");
+        onNameEnter() {
+            this.name = this.$refs.refName.value;
         },
-        keyAge() {
-            console.log("年龄正在输入。。。");
-        },
-        keyNameEnter() {
-            console.log("名字正在输入。。。");
-        },
-        keyAgeEnter() {
-            console.log("年龄正在输入。。。");
+        onAgeEnter() {
+            this.age = this.$refs.refAge.value;
         }
     }
 });
