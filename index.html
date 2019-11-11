@@ -2,29 +2,26 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ref双向绑定事件</title>
+    <title>css动态样式绑定</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="vue-app">
-        <h1>computed 计算属性</h1>
-        <h4>只有在当前的属性发生变化后，才会被触发computed，可大大的优化性能</h4>
-        <h4>如果属性常常发生变化，推荐computed，例如样式，搜索</h4>
-
-        <!-- computed -->
-        <!-- computed属于属性，所以AddToA不用（） -->
-        <button @click="a++">Add to A</button>
-        <button @click="b++">Add to B</button>
-        <p>A- {{a}} </p>
-        <p>B- {{b}} </p>
-        <p>Age + A = {{ AddToA }} </p>
-        <p>Age + B = {{ AddToB }} </p>
-        <!-- methods 只要methods中的方法有一个发生变化,其他方法的值虽然不变化但是都跟着运行了一遍-->
-        <!-- 耗费性能 -->
-        <!-- <p>Age + A = {{ AddToA() }} </p>
-        <p>Age + B = {{ AddToB() }} </p> -->
+        <h1>动态绑定样式 两种方式</h1>
+        <h4>示例1 属性绑定</h4>
+        <!-- <div v-bind:class="{类名:属性值(true/false) false时，属性无效/true时，属性生效}"></div> -->
+        <!-- <div :class="{changeColor:true}"> -->
+        <!-- <div @click="mrChangeColor = !mrChangeColor" :class="{changeColor:mrChangeColor}">
+                <span>Hello</span>
+            </div> -->
+        <h4>示例2 计算属性绑定</h4>
+        <button @click="mrChangeColor = !mrChangeColor">changeColor</button>
+        <button @click="mrchangeLength = !mrchangeLength">changeLength</button>
+        <div :class="comColor">
+            <span>Hello</span>
+        </div>
     </div>
 </body>
 <script src="app.js"></script>
