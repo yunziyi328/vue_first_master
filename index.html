@@ -2,26 +2,30 @@
 
 <head>
     <meta charset="utf-8">
-    <title>css动态样式绑定</title>
+    <title>if/show指令</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="vue-app">
-        <h1>动态绑定样式 两种方式</h1>
-        <h4>示例1 属性绑定</h4>
-        <!-- <div v-bind:class="{类名:属性值(true/false) false时，属性无效/true时，属性生效}"></div> -->
-        <!-- <div :class="{changeColor:true}"> -->
-        <!-- <div @click="mrChangeColor = !mrChangeColor" :class="{changeColor:mrChangeColor}">
-                <span>Hello</span>
-            </div> -->
-        <h4>示例2 计算属性绑定</h4>
-        <button @click="mrChangeColor = !mrChangeColor">changeColor</button>
-        <button @click="mrchangeLength = !mrchangeLength">changeLength</button>
-        <div :class="comColor">
-            <span>Hello</span>
-        </div>
+        <h1>v-if 与 v-show指令的区别：</h1>
+        <p>v-if 为false时，其内容不显示在控制台中（console）</p>
+        <p>v-show 为false时，其内容仍然在控制台中，但不在页面显示内容</p><br />
+        <h4>v-if</h4>
+        <button @click="error=!error">ボタン１</button>
+        <button @click="success=!success">ボタン２</button>
+        <!-- ①为真时②③不执行，①为假时②会执行 ①②都为假时，③才会执行-->
+        <p v-if="error">errorがtrueの場合は表示する！</p>
+        <!-- ② -->
+        <p v-else-if="success">success</p>
+        <!-- ③ -->
+        <p v-else>other</p>
+        <h4>v-show</h4>
+        <button @click="error1=!error1">ERROR</button>
+        <button @click="success1=!success1">SUCCESS</button>
+        <p v-show="error1">网络连接失败：404</p>
+        <p v-show="success1">网络连接成功：200</p>
     </div>
 </body>
 <script src="app.js"></script>

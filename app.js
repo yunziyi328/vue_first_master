@@ -3,17 +3,14 @@ new Vue({
     el: "#vue-app", // element 对应index.html的id="vue-app" 可操作的id容器
     data() {
         return {
-            mrChangeColor: true,
-            mrchangeLength: false
+            error: false,
+            success: true,
+            error1: false,
+            success1: true,
         };
     },
     methods: {},
     computed: {
-        comColor() {
-            return {
-                changeColor: this.mrChangeColor,
-                changeLength: this.mrchangeLength
-            };
-        }
+
     }
 });
