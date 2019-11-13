@@ -1,15 +1,24 @@
-// 实例化vue对象
+// // 实例化vue对象
 new Vue({
     el: "#vue-app", // element 对应index.html的id="vue-app" 可操作的id容器
     data() {
         return {
-            error: false,
-            success: true,
-            error1: false,
-            success1: true,
+            health: 100,
+            ended: false
         };
     },
-    methods: {},
+    methods: {
+        punch() {
+            this.health -= 10;
+            if (this.health <= 0) {
+                this.ended = true;
+            }
+        },
+        restart() {
+            this.health = 100;
+            this.ended = false;
+        }
+    },
     computed: {
 
     }

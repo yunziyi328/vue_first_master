@@ -2,30 +2,26 @@
 
 <head>
     <meta charset="utf-8">
-    <title>if/show指令</title>
+    <title>Vue CDN DEMO</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="vue-app">
-        <h1>v-if 与 v-show指令的区别：</h1>
-        <p>v-if 为false时，其内容不显示在控制台中（console）</p>
-        <p>v-show 为false时，其内容仍然在控制台中，但不在页面显示内容</p><br />
-        <h4>v-if</h4>
-        <button @click="error=!error">ボタン１</button>
-        <button @click="success=!success">ボタン２</button>
-        <!-- ①为真时②③不执行，①为假时②会执行 ①②都为假时，③才会执行-->
-        <p v-if="error">errorがtrueの場合は表示する！</p>
-        <!-- ② -->
-        <p v-else-if="success">success</p>
-        <!-- ③ -->
-        <p v-else>other</p>
-        <h4>v-show</h4>
-        <button @click="error1=!error1">ERROR</button>
-        <button @click="success1=!success1">SUCCESS</button>
-        <p v-show="error1">网络连接失败：404</p>
-        <p v-show="success1">网络连接成功：200</p>
+        <!-- bag image -->
+        <div id="bag" :class="{burst:ended}"></div>
+
+        <!-- bag health -->
+        <div id="bag-health">
+            <div :style="{width:health + '%'}"></div>
+        </div>
+
+        <!-- game control -->
+        <div id="controls">
+            <button @click="punch" v-show="!ended">Punch</button>
+            <button @click="restart">Restart</button>
+        </div>
     </div>
 </body>
 <script src="app.js"></script>
