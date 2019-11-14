@@ -1,25 +1,29 @@
 // // 实例化vue对象
-new Vue({
-    el: "#vue-app", // element 对应index.html的id="vue-app" 可操作的id容器
+const vueOne = new Vue({
+    el: "#vue-app-one", // element 对应index.html的id="vue-app" 可操作的id容器
     data() {
         return {
-            health: 100,
-            ended: false
+            title: '第一个容器'
+        };
+    },
+    methods: {},
+    computed: {}
+});
+
+const vueTwo = new Vue({
+    el: "#vue-app-two", // element 对应index.html的id="vue-app" 可操作的id容器
+    data() {
+        return {
+            title: '第二个容器'
         };
     },
     methods: {
-        punch() {
-            this.health -= 10;
-            if (this.health <= 0) {
-                this.ended = true;
-            }
-        },
-        restart() {
-            this.health = 100;
-            this.ended = false;
+        ChangeAppOne() {
+            vueOne.title = "这是vueOne的title"
         }
     },
-    computed: {
-
-    }
+    computed: {}
 });
+
+// 在外部改变vueTwo的内容
+// vueTwo.title = "这是vueTwo的title"
