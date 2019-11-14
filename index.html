@@ -8,13 +8,16 @@
 </head>
 
 <body>
-    <h1>创建多个容器</h1>
+    <h1>Compont 多个实例对象</h1>
     <div id="vue-app-one">
-        <h2>{{title}}</h2>
+        <h2>App One</h2>
+        <!-- 利用Component組件 -->
+        <Greeting />
     </div>
     <div id="vue-app-two">
-        <h2>{{title}}</h2>
-        <button @click="ChangeAppOne">Change app one title</button>
+        <h2>App Two</h2>
+        <!-- 利用Component組件 -->
+        <Greeting />
     </div>
 </body>
 <script src="app.js"></script>
