@@ -8,6 +8,8 @@
         <p v-show="use.show">{{use.age}}, {{use.job}}</p>
       </li>
     </ul>
+    <!-- 传引用 会影响多处属性的值-->
+    <button @click="deleteUser">删除用户</button>
   </div>
 </template>
 
@@ -21,6 +23,11 @@ export default {
       required: true
     },
     sbqusers2: {}
+  },
+  methods: {
+    deleteUser() {
+      this.sbqusers.pop();
+    }
   },
   data() {
     return {};

@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <!-- <HelloWorld msg="第一个Vue" /> -->
-    <app-header />
+    <app-header :title="title" />
     <h1>App.vue</h1>
     <!-- 3. 局部调用组件 -->
     <!-- sbqusers的内容传给子组件 -->
     <Users :sbqusers="users" />
-    <Footer />
+    <hr />
+    <Users :sbqusers="users" />
+    <Footer :title="title" />
   </div>
 </template>
 
@@ -27,7 +29,8 @@ export default {
         { name: "劳克斯", age: 55, job: "营养师", show: false },
         { name: "埃玛瑞", age: 10, job: "职业潜水者", show: false },
         { name: "或力气", age: 36, job: "司机", show: false }
-      ]
+      ],
+      title: "爱美丽"
     };
   },
   // 2. 注册组件

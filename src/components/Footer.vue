@@ -1,11 +1,16 @@
 <template>
   <div class="footer">
-    <p>{{copyright}}</p>
+    <p>{{copyright}}{{title}}</p>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String
+    }
+  },
   data() {
     return {
       copyright: "Copyright 2020 Vue Demo"
