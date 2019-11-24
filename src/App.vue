@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <!-- <HelloWorld msg="第一个Vue" /> -->
-    <app-header :title="title" />
+    <!-- emit 在emit中注册了什么名字，此时就该使用什么名字"changeTitle" 右侧的值通知它触发了什么方法"updateTitle" -->
+    <app-header @changeTitle="updateTitle" :title="title" />
     <h1>App.vue</h1>
-    <!-- 3. 局部调用组件 -->
-    <!-- sbqusers的内容传给子组件 -->
     <Users :sbqusers="users" />
     <hr />
     <Users :sbqusers="users" />
@@ -13,8 +11,6 @@
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
-// 1. 局部引入组件
 import Users from "./components/Users";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -33,12 +29,17 @@ export default {
       title: "爱美丽"
     };
   },
-  // 2. 注册组件
   components: {
     // HelloWorld
     Users,
     "app-header": Header,
     Footer
+  },
+  methods: {
+    updateTitle(updatedTitle) {
+      // console.log(updatedTitle);
+      this.title = updatedTitle;
+    }
   }
 };
 </script>
